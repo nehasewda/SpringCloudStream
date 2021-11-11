@@ -1,0 +1,14 @@
+spring.cloud.stream:
+  function:
+    definition: inputProcessor
+  bindings:
+    inputProcessor-in-0:
+      destination: instream
+    inputProcessor-out-0:
+      destination: outstream
+  kafka:
+    streams:
+      binder:
+        applicationId: demo
+        brokers: localhost:9092
+        deserializationExceptionHandler: logAndContinue
